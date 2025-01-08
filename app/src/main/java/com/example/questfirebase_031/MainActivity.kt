@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.questfirebase_031.ui.home.pages.HomeScreen
 import com.example.questfirebase_031.ui.theme.QuestFirebase_031Theme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +21,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             QuestFirebase_031Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    HomeScreen(
+                        navigateToItemEntry = {},
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
