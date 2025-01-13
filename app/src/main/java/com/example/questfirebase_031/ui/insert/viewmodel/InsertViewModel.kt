@@ -4,7 +4,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.questfirebase_031.repository.RepositoryMhs
+import kotlinx.coroutines.launch
 
 class InsertViewModel(
     private val repositoryMhs: RepositoryMhs
@@ -61,5 +63,12 @@ class InsertViewModel(
     fun resetSnackBarMessage(){
         uiState = FormState.Idle
     }
+}
+
+sealed class FormState {
+    object Idle : FormState()
+    object Loading : FormState()
+    data class Success(val message: String) : FormState()
+    data class Error(val message: String) : FormState()
 }
 
