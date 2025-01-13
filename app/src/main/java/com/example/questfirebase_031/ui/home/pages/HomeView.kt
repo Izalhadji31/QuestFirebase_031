@@ -1,6 +1,5 @@
 package com.example.questfirebase_031.ui.home.pages
 
-
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -77,7 +76,7 @@ fun HomeScreen(
             modifier = Modifier.padding(innerPadding),
             onDetailClick = onDetailClick,
             onDeleteClick = {
-                viewModel.getMhs()
+                viewModel.deleteMhs(it)
             }
         )
     }
